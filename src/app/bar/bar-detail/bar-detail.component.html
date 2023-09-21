@@ -1,5 +1,12 @@
-Bar Detail
-
 <app-store-wrapper [store]="store">
-  {{ store.data$ | async | json }}
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Bar</mat-card-title>
+      <mat-card-subtitle>Subtitle</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      {{ store.data$ | async | json }}
+    </mat-card-content>
+  </mat-card>
 </app-store-wrapper>
