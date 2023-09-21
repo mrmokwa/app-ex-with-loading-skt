@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LoadingIndicatorService } from './shared/loading-indicator/loading-indicator.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,4 @@ import { LoadingIndicatorService } from './shared/loading-indicator/loading-indi
 })
 export class AppComponent {
   title = 'LoadingSkeleton';
-
-  constructor(public loadIncService: LoadingIndicatorService) {}
 }
