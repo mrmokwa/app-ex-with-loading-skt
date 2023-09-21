@@ -1,3 +1,7 @@
+<mat-toolbar>
+  <h1>List of Bar's</h1>
+</mat-toolbar>
+
 <ng-container *ngIf="data$ | async as data">
   <ng-container *ngFor="let bar of data">
     <mat-nav-list [routerLink]="[bar.code]">

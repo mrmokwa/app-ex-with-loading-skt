@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.full-screen {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+}
+
+.mat-sidenav {
+  width: 300px;
+}

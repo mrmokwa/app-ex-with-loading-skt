@@ -8,12 +8,10 @@ const routes: Routes = [
   {
     path: 'bar',
     component: BarMasterComponent,
-    children: [
-      {
-        path: ':code',
-        component: BarDetailComponent,
-      },
-    ],
+  },
+  {
+    path: 'bar/:code',
+    component: BarDetailComponent,
   },
 ];
 

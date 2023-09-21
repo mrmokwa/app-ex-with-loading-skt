@@ -1,10 +1,14 @@
-App-Component
+<mat-toolbar [color]="'primary'"></mat-toolbar>
 
-<br />
+<mat-sidenav-container class="full-screen">
+  <mat-sidenav [opened]="true" [mode]="'side'">
+    <mat-nav-list>
+      <mat-list-item routerLink="bar">Bar</mat-list-item>
+      <mat-list-item routerLink="foo">Foo</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
 
-<button routerLink="bar">Bar</button>
-<button routerLink="foo">Foo</button>
-
-<br />
-
-<router-outlet></router-outlet>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
