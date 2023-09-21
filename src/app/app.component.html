@@ -1,4 +1,4 @@
-<app-loading-indicator></app-loading-indicator>
+<app-loading-indicator *ngIf="loadIncService.loading$ | async" />
 
 App-Component
 
