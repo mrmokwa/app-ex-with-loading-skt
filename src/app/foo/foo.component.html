@@ -1,10 +1,3 @@
-<p>foo works!</p>
-
-<ng-container *ngIf="data$ | async as foo; else loading">
-  {{ foo | json }}
-</ng-container>
-
-<ng-template #loading>
-  <app-loading-indicator></app-loading-indicator>
-  <app-skeleton-card></app-skeleton-card>
-</ng-template>
+<app-store-wrapper [store]="store">
+  {{ store.data$ | async | json }}
+</app-store-wrapper>
