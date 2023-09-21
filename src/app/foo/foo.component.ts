@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, map } from 'rxjs';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-foo',
