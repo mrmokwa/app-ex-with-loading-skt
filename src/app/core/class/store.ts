@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export abstract class Store<T> {
   abstract get: () => Observable<T>;
 
-  protected loading$ = new BehaviorSubject<boolean>(false);
+  loading$ = new BehaviorSubject<boolean>(false);
 
   private store = new BehaviorSubject<T | null>(null);
   data$ = this.store.asObservable();
