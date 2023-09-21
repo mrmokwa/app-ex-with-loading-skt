@@ -4,17 +4,32 @@ import { FooComponent } from './foo/foo.component';
 import { fooResolver } from './foo/foo.resolver';
 import { BarComponent } from './bar/bar.component';
 import { barResolver } from './bar/bar.resolver';
+import { ContentLoaderComponent } from './shared/content-loader/content-loader.component';
 
 const routes: Routes = [
   {
     path: 'bar',
-    component: BarComponent,
-    resolve: { bar: barResolver },
+    component: ContentLoaderComponent,
+    resolve: { readyWhen: barResolver },
+    children: [
+      {
+        path: '',
+        component: BarComponent,
+        resolve: { bar: barResolver },
+      },
+    ],
   },
   {
     path: 'foo',
-    component: FooComponent,
-    resolve: { foo: fooResolver },
+    component: ContentLoaderComponent,
+    resolve: { readyWhen: fooResolver },
+    children: [
+      {
+        path: '',
+        component: FooComponent,
+        resolve: { foo: fooResolver },
+      },
+    ],
   },
 ];
 

@@ -1,0 +1,14 @@
+<p>content-loader works!</p>
+
+<ng-container *ngIf="data$ | async as data; else loading">
+  {{ data | json }}
+
+  <ng-container [ngSwitch]="data.ready">
+    <router-outlet *ngSwitchCase="true"></router-outlet>
+    <div *ngSwitchDefault>Erro ao carregar dados</div>
+  </ng-container>
+</ng-container>
+
+<ng-template #loading>
+  <app-skeleton-card></app-skeleton-card>
+</ng-template>
