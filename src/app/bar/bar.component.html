@@ -1,3 +1,10 @@
 <p>bar works!</p>
 
-{{ data$ | async | json }}
+<ng-container *ngIf="data$ | async as bar; else loading">
+  {{ bar | json }}
+</ng-container>
+
+<ng-template #loading>
+  <app-loading-indicator></app-loading-indicator>
+  <app-skeleton-card></app-skeleton-card>
+</ng-template>
