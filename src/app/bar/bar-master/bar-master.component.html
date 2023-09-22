@@ -4,8 +4,11 @@
 
 <ng-container *ngIf="data$ | async as data">
   <ng-container *ngFor="let bar of data">
-    <mat-nav-list [routerLink]="[bar.code]">
-      <mat-list-item>{{ bar.code }}</mat-list-item>
+    <mat-nav-list [routerLink]="[bar.id]">
+      <mat-list-item>
+        <p matListItemTitle>{{ bar.last_name }}</p>
+        <p matListItemLine>{{ bar.first_name }}</p>
+      </mat-list-item>
     </mat-nav-list>
   </ng-container>
 </ng-container>

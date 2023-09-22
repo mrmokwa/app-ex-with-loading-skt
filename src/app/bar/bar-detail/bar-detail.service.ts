@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { switchMap } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs';
 
 import { BarService } from '../bar.service';
 import { Store } from 'src/app/core/class/store';
@@ -15,10 +15,10 @@ export class BarDetailService extends Store<Bar> {
     super();
   }
 
+  id$ = this.route.params.pipe(map((params) => +params['id']));
+
   override get = () =>
-    this.route.params.pipe(
-      switchMap(({ code }) =>
-        this.service.getById(code).pipe(indicate(this.loading$))
-      )
+    this.id$.pipe(
+      switchMap((id) => this.service.getById(id).pipe(indicate(this.loading$)))
     );
 }

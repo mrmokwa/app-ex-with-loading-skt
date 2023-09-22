@@ -7,14 +7,7 @@
 </mat-toolbar>
 
 <app-store-wrapper [store]="store">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Bar</mat-card-title>
-      <mat-card-subtitle>Subtitle</mat-card-subtitle>
-    </mat-card-header>
-
-    <mat-card-content>
-      {{ store.data$ | async | json }}
-    </mat-card-content>
-  </mat-card>
+  <ng-container *ngIf="store.data$ | async as data">
+    <app-bar-detail-card [bar]="data"></app-bar-detail-card>
+  </ng-container>
 </app-store-wrapper>

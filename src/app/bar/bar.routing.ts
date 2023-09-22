@@ -10,7 +10,7 @@ const routes: Routes = [
     component: BarMasterComponent,
   },
   {
-    path: 'bar/:code',
+    path: 'bar/:id',
     component: BarDetailComponent,
   },
 ];
