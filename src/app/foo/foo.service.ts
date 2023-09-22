@@ -9,6 +9,6 @@ export class FooService {
   constructor() {}
 
   getAll() {
-    return of(FOO_DATA).pipe(delay(1000));
+    return of(FOO_DATA).pipe(delay(1500));
   }
 }
