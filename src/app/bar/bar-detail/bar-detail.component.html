@@ -1,13 +1,25 @@
-<mat-toolbar>
-  <button mat-icon-button [routerLink]="['..']">
-    <mat-icon> arrow_back </mat-icon>
-  </button>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer appDrawerNavigation>
+    <router-outlet
+      [name]="'drawer'"
+      (activate)="drawer.open()"
+      (deactivate)="drawer.close()"
+    ></router-outlet>
+  </mat-drawer>
 
-  <h1>Bar</h1>
-</mat-toolbar>
+  <mat-drawer-content>
+    <mat-toolbar>
+      <button mat-icon-button [routerLink]="['..']">
+        <mat-icon> arrow_back </mat-icon>
+      </button>
 
-<app-store-wrapper [store]="store">
-  <ng-container *ngIf="store.data$ | async as data">
-    <app-bar-detail-card [bar]="data"></app-bar-detail-card>
-  </ng-container>
-</app-store-wrapper>
+      <h1>Bar</h1>
+    </mat-toolbar>
+
+    <app-store-wrapper [store]="store">
+      <ng-container *ngIf="store.data$ | async as data">
+        <app-bar-detail-card [bar]="data"></app-bar-detail-card>
+      </ng-container>
+    </app-store-wrapper>
+  </mat-drawer-content>
+</mat-drawer-container>

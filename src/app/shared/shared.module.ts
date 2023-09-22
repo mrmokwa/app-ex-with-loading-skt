@@ -12,6 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { SkeletonCardComponent } from './skeleton-card/skeleton-card.component';
 import { StoreWrapperComponent } from './store-wrapper/store-wrapper.component';
+import { SkeletonLinesComponent } from './skeleton-lines/skeleton-lines.component';
+import { DrawerNavigationDirective } from './drawer-directive/drawer-navigation.directive';
 
 const MATERIAL_MODULES = [
   MatProgressBarModule,
@@ -23,7 +25,12 @@ const MATERIAL_MODULES = [
   MatButtonModule,
 ];
 
-const SHARED_COMPONENTS = [SkeletonCardComponent, StoreWrapperComponent];
+const SHARED_COMPONENTS = [
+  SkeletonCardComponent,
+  StoreWrapperComponent,
+  SkeletonLinesComponent,
+  DrawerNavigationDirective,
+];
 
 @NgModule({
   declarations: [SHARED_COMPONENTS],

@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  flex: auto;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  font-size: 14px;
+  margin-bottom: 8px;
+}

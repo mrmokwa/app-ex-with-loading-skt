@@ -7,10 +7,15 @@ import { BarMasterComponent } from './bar-master/bar-master.component';
 import { SharedModule } from '../shared/shared.module';
 import { BarRoutingModule } from './bar.routing';
 import { BarDetailCardComponent } from './bar-detail-card/bar-detail-card.component';
-import { BarDetailCardListComponent } from './bar-detail-card-list/bar-detail-card-list.component';
+import { BarDetailDrawerInfoComponent } from './bar-detail-drawer-info/bar-detail-drawer-info.component';
 
 @NgModule({
-  declarations: [BarDetailComponent, BarMasterComponent, BarDetailCardComponent, BarDetailCardListComponent],
+  declarations: [
+    BarDetailComponent,
+    BarMasterComponent,
+    BarDetailCardComponent,
+    BarDetailDrawerInfoComponent,
+  ],
   imports: [CommonModule, SharedModule, RouterModule, BarRoutingModule],
 })
 export class BarModule {}
