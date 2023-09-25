@@ -1,0 +1,18 @@
+<ng-container [ngSwitch]="error.status">
+  <div *ngSwitchCase="403">
+    <h2>403 - Proibido</h2>
+    <h3>Você não tem permissão para acessar este recurso</h3>
+  </div>
+
+  <div *ngSwitchCase="404">
+    <h2>404 - Não encontrado</h2>
+    <h3>O servidor não conseguiu encontrar o recurso solicitado</h3>
+  </div>
+
+  <div *ngSwitchDefault>
+    <h2>{{ error.status }}</h2>
+    <h3>{{ error.statusText }}</h3>
+  </div>
+</ng-container>
+
+<button mat-stroked-button [routerLink]="['..']">Voltar para o início</button>

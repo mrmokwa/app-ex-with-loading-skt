@@ -6,7 +6,7 @@ import { FooService } from './foo.service';
   providedIn: 'root',
 })
 export class FooStoreService extends Store<Foo[]> {
-  override get = () => this.service.getAll();
+  override getData = () => this.service.getAll();
 
   constructor(private service: FooService) {
     super();

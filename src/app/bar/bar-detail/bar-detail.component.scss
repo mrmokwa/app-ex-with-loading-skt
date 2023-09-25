@@ -5,9 +5,13 @@
   height: 100%;
 }
 
-app-store-wrapper,
-.mat-mdc-card {
+.container {
+  display: block;
   padding: 24px;
-  max-width: 700px;
+}
+
+app-skeleton-card,
+app-bar-detail-card {
+  width: 800px;
   margin-right: auto;
 }

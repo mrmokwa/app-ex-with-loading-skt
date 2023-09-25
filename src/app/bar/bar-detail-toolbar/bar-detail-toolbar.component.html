@@ -1,0 +1,19 @@
+<mat-toolbar>
+  <button mat-icon-button [routerLink]="['..']">
+    <mat-icon> arrow_back </mat-icon>
+  </button>
+
+  <h1>Bar</h1>
+
+  <span style="flex: auto"></span>
+
+  <ng-container *ngIf="bar">
+    <button mat-icon-button [routerLink]="['..', bar.id - 1]">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+
+    <button mat-icon-button [routerLink]="['..', bar.id + 1]">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </ng-container>
+</mat-toolbar>

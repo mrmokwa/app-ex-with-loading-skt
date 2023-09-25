@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { BarRoutingModule } from './bar.routing';
 import { BarDetailCardComponent } from './bar-detail-card/bar-detail-card.component';
 import { BarDetailDrawerInfoComponent } from './bar-detail-drawer-info/bar-detail-drawer-info.component';
+import { BarDetailToolbarComponent } from './bar-detail-toolbar/bar-detail-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BarDetailDrawerInfoComponent } from './bar-detail-drawer-info/bar-detai
     BarMasterComponent,
     BarDetailCardComponent,
     BarDetailDrawerInfoComponent,
+    BarDetailToolbarComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule, BarRoutingModule],
 })

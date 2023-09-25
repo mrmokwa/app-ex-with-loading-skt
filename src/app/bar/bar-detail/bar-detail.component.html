@@ -7,31 +7,22 @@
     ></router-outlet>
   </mat-drawer>
 
-  <mat-drawer-content>
-    <mat-toolbar>
-      <button mat-icon-button [routerLink]="['..']">
-        <mat-icon> arrow_back </mat-icon>
-      </button>
+  <mat-drawer-content *ngIf="store.viewModel$ | async as vm">
+    <app-bar-detail-toolbar [bar]="vm.data" />
 
-      <h1>Bar</h1>
-
-      <span style="flex: auto"></span>
-
-      <button mat-icon-button [routerLink]="['..', previous$ | async]">
-        <mat-icon>navigate_before</mat-icon>
-      </button>
-
-      <button mat-icon-button [routerLink]="['..', next$ | async]">
-        <mat-icon>navigate_next</mat-icon>
-      </button>
-    </mat-toolbar>
-
-    <app-store-wrapper [store]="store">
-      <ng-container *ngIf="store.data$ | async as data; else teste">
-        <app-bar-detail-card [bar]="data"></app-bar-detail-card>
+    <div class="container">
+      <ng-container *ngIf="vm.loading">
+        <app-top-progress-bar></app-top-progress-bar>
+        <app-skeleton-card></app-skeleton-card>
       </ng-container>
 
-      <ng-template #teste> Teste </ng-template>
-    </app-store-wrapper>
+      <ng-container *ngIf="vm.error">
+        <app-http-error [error]="vm.error"></app-http-error>
+      </ng-container>
+
+      <ng-container *ngIf="vm.data">
+        <app-bar-detail-card [bar]="vm.data"></app-bar-detail-card>
+      </ng-container>
+    </div>
   </mat-drawer-content>
 </mat-drawer-container>

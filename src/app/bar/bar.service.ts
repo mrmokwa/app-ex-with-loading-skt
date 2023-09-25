@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, filter, map, of, tap } from 'rxjs';
 
@@ -88,7 +89,8 @@ export class BarService {
       delay(1500),
       map((list) => list.find((data) => data.id === +id)),
       tap((bar) => {
-        if (!bar) throw '404_NOT_FOUND';
+        if (!bar)
+          throw new HttpErrorResponse({ status: 404, statusText: 'NOT_FUND' });
       }),
       filter(Boolean)
     );

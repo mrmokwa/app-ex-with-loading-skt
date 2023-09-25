@@ -11,10 +11,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 import { SkeletonCardComponent } from './skeleton-card/skeleton-card.component';
-import { StoreWrapperComponent } from './store-wrapper/store-wrapper.component';
 import { SkeletonLinesComponent } from './skeleton-lines/skeleton-lines.component';
 import { DrawerNavigationDirective } from './directives/drawer-navigation.directive';
 import { SidenavAutoModeDirective } from './directives/sidenav-auto-mode.directive';
+import { TopProgressBarComponent } from './top-progress-bar/top-progress-bar.component';
+import { HttpErrorComponent } from './http-error/http-error.component';
 
 const MATERIAL_MODULES = [
   MatProgressBarModule,
@@ -28,8 +29,9 @@ const MATERIAL_MODULES = [
 
 const SHARED_COMPONENTS = [
   SkeletonCardComponent,
-  StoreWrapperComponent,
   SkeletonLinesComponent,
+  TopProgressBarComponent,
+  HttpErrorComponent,
 ];
 
 const SHARED_DIRECTIVES = [DrawerNavigationDirective, SidenavAutoModeDirective];
