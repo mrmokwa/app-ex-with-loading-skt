@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { SkeletonCardComponent } from './skeleton-card/skeleton-card.component';
 import { StoreWrapperComponent } from './store-wrapper/store-wrapper.component';
 import { SkeletonLinesComponent } from './skeleton-lines/skeleton-lines.component';
-import { DrawerNavigationDirective } from './drawer-directive/drawer-navigation.directive';
+import { DrawerNavigationDirective } from './directives/drawer-navigation.directive';
 
 const MATERIAL_MODULES = [
   MatProgressBarModule,
