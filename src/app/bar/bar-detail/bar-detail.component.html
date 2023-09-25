@@ -14,12 +14,24 @@
       </button>
 
       <h1>Bar</h1>
+
+      <span style="flex: auto"></span>
+
+      <button mat-icon-button [routerLink]="['..', previous$ | async]">
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+
+      <button mat-icon-button [routerLink]="['..', next$ | async]">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
     </mat-toolbar>
 
     <app-store-wrapper [store]="store">
-      <ng-container *ngIf="store.data$ | async as data">
+      <ng-container *ngIf="store.data$ | async as data; else teste">
         <app-bar-detail-card [bar]="data"></app-bar-detail-card>
       </ng-container>
+
+      <ng-template #teste> Teste </ng-template>
     </app-store-wrapper>
   </mat-drawer-content>
 </mat-drawer-container>
