@@ -18,7 +18,7 @@ import { Subscription } from 'rxjs';
   selector: '[appDrawerNavigation]',
 })
 export class DrawerNavigationDirective implements OnInit, OnDestroy {
-  @Input() size = '330px';
+  @Input() size = '400px';
 
   private subscription = new Subscription();
 

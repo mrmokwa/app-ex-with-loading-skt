@@ -26,12 +26,7 @@ export class SidenavAutoModeDirective {
     this.matSidenav.opened = true;
 
     this.subscription = this.observer
-      .observe([
-        Breakpoints.XSmall,
-        Breakpoints.Small,
-        Breakpoints.Handset,
-        Breakpoints.TabletPortrait,
-      ])
+      .observe([Breakpoints.XSmall, Breakpoints.Small])
       .pipe(distinctUntilKeyChanged('matches'))
       .subscribe((state) => this.updateView(state));
   }
