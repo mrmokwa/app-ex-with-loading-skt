@@ -40,12 +40,10 @@ export class SidenavAutoModeDirective {
     if (state.matches) {
       this.matSidenav.mode = 'over';
       this.matSidenav.disableClose = false;
-      this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
       this.matSidenav.close();
     } else {
       this.matSidenav.mode = 'side';
       this.matSidenav.disableClose = true;
-      this.renderer.setStyle(this.elRef.nativeElement, 'width', this.size);
       this.matSidenav.open();
     }
   }
