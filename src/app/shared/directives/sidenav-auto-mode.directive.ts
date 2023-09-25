@@ -27,6 +27,7 @@ export class SidenavAutoModeDirective {
 
     this.subscription = this.observer
       .observe([
+        Breakpoints.XSmall,
         Breakpoints.Small,
         Breakpoints.Handset,
         Breakpoints.TabletPortrait,
