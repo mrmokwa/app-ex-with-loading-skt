@@ -5,7 +5,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container class="full-screen">
-  <mat-sidenav [opened]="true" [mode]="'side'" #sidenav>
+  <mat-sidenav #sidenav appSidenavAutoMode>
     <mat-nav-list>
       <mat-list-item routerLink="bar">Bar</mat-list-item>
       <mat-list-item routerLink="foo">Foo</mat-list-item>

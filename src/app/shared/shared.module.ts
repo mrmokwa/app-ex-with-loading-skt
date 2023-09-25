@@ -14,6 +14,7 @@ import { SkeletonCardComponent } from './skeleton-card/skeleton-card.component';
 import { StoreWrapperComponent } from './store-wrapper/store-wrapper.component';
 import { SkeletonLinesComponent } from './skeleton-lines/skeleton-lines.component';
 import { DrawerNavigationDirective } from './directives/drawer-navigation.directive';
+import { SidenavAutoModeDirective } from './directives/sidenav-auto-mode.directive';
 
 const MATERIAL_MODULES = [
   MatProgressBarModule,
@@ -29,12 +30,13 @@ const SHARED_COMPONENTS = [
   SkeletonCardComponent,
   StoreWrapperComponent,
   SkeletonLinesComponent,
-  DrawerNavigationDirective,
 ];
 
+const SHARED_DIRECTIVES = [DrawerNavigationDirective, SidenavAutoModeDirective];
+
 @NgModule({
-  declarations: [SHARED_COMPONENTS],
+  declarations: [SHARED_COMPONENTS, SHARED_DIRECTIVES],
   imports: [CommonModule, RouterModule, MATERIAL_MODULES],
-  exports: [MATERIAL_MODULES, SHARED_COMPONENTS],
+  exports: [MATERIAL_MODULES, SHARED_COMPONENTS, SHARED_DIRECTIVES],
 })
 export class SharedModule {}
