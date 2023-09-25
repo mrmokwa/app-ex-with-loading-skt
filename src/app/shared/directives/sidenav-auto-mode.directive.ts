@@ -47,8 +47,6 @@ export class SidenavAutoModeDirective {
       this.renderer.setStyle(this.elRef.nativeElement, 'width', this.size);
       this.matSidenav.open();
     }
-
-    console.log(this.matSidenav.mode);
   }
 
   ngOnDestroy() {
