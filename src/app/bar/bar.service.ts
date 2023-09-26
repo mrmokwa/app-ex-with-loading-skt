@@ -89,6 +89,9 @@ export class BarService {
       delay(1500),
       map((list) => list.find((data) => data.id === +id)),
       tap((bar) => {
+        if (bar?.id === 1)
+          throw new HttpErrorResponse({ status: 403, statusText: 'FORBIDDEN' });
+
         if (!bar)
           throw new HttpErrorResponse({ status: 404, statusText: 'NOT_FUND' });
       }),

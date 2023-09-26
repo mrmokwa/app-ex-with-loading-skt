@@ -9,4 +9,9 @@ import { map } from 'rxjs';
 })
 export class BarDetailToolbarComponent {
   @Input() bar: Bar | null;
+
+  id$ = inject(ActivatedRoute).params.pipe(map((params) => +params['id']));
+
+  next$ = this.id$.pipe(map((id) => ++id));
+  prev$ = this.id$.pipe(map((id) => --id));
 }

@@ -16,13 +16,12 @@
         <app-skeleton-card></app-skeleton-card>
       </ng-container>
 
-      <ng-container *ngIf="vm.error">
-        <app-http-error [error]="vm.error"></app-http-error>
-      </ng-container>
+      <app-http-error *ngIf="vm.error" [error]="vm.error"></app-http-error>
 
-      <ng-container *ngIf="vm.data">
-        <app-bar-detail-card [bar]="vm.data"></app-bar-detail-card>
-      </ng-container>
+      <app-bar-detail-card
+        *ngIf="vm.data"
+        [bar]="vm.data"
+      ></app-bar-detail-card>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

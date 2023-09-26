@@ -7,13 +7,11 @@
 
   <span style="flex: auto"></span>
 
-  <ng-container *ngIf="bar">
-    <button mat-icon-button [routerLink]="['..', bar.id - 1]">
-      <mat-icon>navigate_before</mat-icon>
-    </button>
+  <button mat-icon-button [routerLink]="['..', prev$ | async]">
+    <mat-icon>navigate_before</mat-icon>
+  </button>
 
-    <button mat-icon-button [routerLink]="['..', bar.id + 1]">
-      <mat-icon>navigate_next</mat-icon>
-    </button>
-  </ng-container>
+  <button mat-icon-button [routerLink]="['..', next$ | async]">
+    <mat-icon>navigate_next</mat-icon>
+  </button>
 </mat-toolbar>
