@@ -34,7 +34,7 @@ export class DrawerNavigationDirective implements OnInit, OnDestroy {
 
     this.subscription = this.observer
       .observe([Breakpoints.XSmall])
-      .subscribe((state) => this.updateView(state));
+      .subscribe((state) => setTimeout(() => this.updateView(state)));
   }
 
   updateView(state: BreakpointState) {
