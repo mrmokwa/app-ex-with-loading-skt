@@ -16,7 +16,6 @@ const routes: Routes = [
     children: [
       {
         path: 'info',
-        outlet: 'drawer',
         component: BarDetailDrawerInfoComponent,
       },
     ],

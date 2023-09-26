@@ -10,10 +10,7 @@
         <p matListItemTitle>Nome</p>
         <p matListItemLine>{{ bar.first_name }}</p>
         <div matListItemMeta>
-          <button
-            mat-icon-button
-            [routerLink]="[{ outlets: { drawer: ['info'] } }]"
-          >
+          <button mat-icon-button [routerLink]="['info']">
             <mat-icon>chevron_right</mat-icon>
           </button>
         </div>

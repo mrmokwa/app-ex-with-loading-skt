@@ -1,7 +1,6 @@
 <mat-drawer-container autosize>
   <mat-drawer #drawer appDrawerNavigation>
     <router-outlet
-      [name]="'drawer'"
       (activate)="drawer.open()"
       (deactivate)="drawer.close()"
     ></router-outlet>
