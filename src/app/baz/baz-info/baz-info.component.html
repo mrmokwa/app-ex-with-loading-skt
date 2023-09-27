@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <h1>Baz's Details</h1>
+
+  <span style="flex: auto"></span>
+
+  <button mat-icon-button [routerLink]="['..']">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container">
+  <app-skeleton-lines *ngIf="store.loading$ | async" />
+
+  <ng-container *ngIf="store.data$ | async as data">
+    {{ data | json }}
+  </ng-container>
+</div>

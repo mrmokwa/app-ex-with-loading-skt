@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Baz</mat-card-title>
+    <mat-card-subtitle>Job information</mat-card-subtitle>
+  </mat-card-header>
+
+  <ng-container *ngIf="baz; else empty">
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <p matListItemTitle>{{ baz.company }}</p>
+          <p matListItemLine>Empresa</p>
+        </mat-list-item>
+
+        <mat-list-item>
+          <p matListItemTitle>{{ baz.job_title }}</p>
+          <p matListItemLine>Cargo</p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button [routerLink]="['baz']">DETALHES</button>
+    </mat-card-actions>
+  </ng-container>
+
+  <ng-template #empty>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <p matListItemTitle>Não cadastrado</p>
+          <p matListItemLine>Não foi encontrado nenhum Baz para esse Bar</p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </ng-template>
+</mat-card>

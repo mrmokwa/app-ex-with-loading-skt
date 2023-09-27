@@ -11,7 +11,12 @@
 }
 
 app-skeleton-card,
-app-bar-detail-card {
-  width: 800px;
+app-bar-detail-card,
+app-baz-card {
+  max-width: 800px;
   margin-right: auto;
+}
+
+app-baz-card {
+  margin-top: 24px;
 }

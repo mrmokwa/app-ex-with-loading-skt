@@ -18,6 +18,14 @@ const routes: Routes = [
         path: 'info',
         component: BarDetailDrawerInfoComponent,
       },
+      {
+        // Exemplo com lazy-loading e standalone
+        path: 'baz',
+        loadComponent: () =>
+          import('../baz/baz-info/baz-info.component').then(
+            (x) => x.BazInfoComponent
+          ),
+      },
     ],
   },
 ];

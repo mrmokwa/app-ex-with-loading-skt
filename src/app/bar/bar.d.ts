@@ -4,4 +4,5 @@ interface Bar {
   last_name: string;
   age: number;
   email: string;
+  baz?: Baz;
 }

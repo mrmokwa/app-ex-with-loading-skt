@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./skeleton-lines.component.scss'],
 })
 export class SkeletonLinesComponent implements OnInit {
-  @Input() lines = 1;
+  @Input() lines = 5;
 
   list: number[] = [];
 

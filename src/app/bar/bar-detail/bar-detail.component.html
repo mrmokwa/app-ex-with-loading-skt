@@ -1,26 +1,26 @@
 <mat-drawer-container autosize>
+  <mat-drawer-content *ngIf="store.viewModel$ | async as vm">
+    <app-bar-detail-toolbar [bar]="vm.data" />
+
+    <div class="container">
+      <app-http-error *ngIf="vm.error" [error]="vm.error" />
+
+      <ng-container *ngIf="vm.loading">
+        <app-top-progress-bar />
+        <app-skeleton-card />
+      </ng-container>
+
+      <ng-container *ngIf="vm.data">
+        <app-bar-detail-card [bar]="vm.data" />
+        <app-baz-card [baz]="vm?.data?.baz" />
+      </ng-container>
+    </div>
+  </mat-drawer-content>
+
   <mat-drawer #drawer appDrawerNavigation>
     <router-outlet
       (activate)="drawer.open()"
       (deactivate)="drawer.close()"
     ></router-outlet>
   </mat-drawer>
-
-  <mat-drawer-content *ngIf="store.viewModel$ | async as vm">
-    <app-bar-detail-toolbar [bar]="vm.data" />
-
-    <div class="container">
-      <ng-container *ngIf="vm.loading">
-        <app-top-progress-bar></app-top-progress-bar>
-        <app-skeleton-card></app-skeleton-card>
-      </ng-container>
-
-      <app-http-error *ngIf="vm.error" [error]="vm.error"></app-http-error>
-
-      <app-bar-detail-card
-        *ngIf="vm.data"
-        [bar]="vm.data"
-      ></app-bar-detail-card>
-    </div>
-  </mat-drawer-content>
 </mat-drawer-container>

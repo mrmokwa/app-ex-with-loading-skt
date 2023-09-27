@@ -9,6 +9,13 @@ const BAR_DATA: readonly Bar[] = [
     last_name: 'Mattessen',
     age: 24,
     email: 'bmattessen0@cargocollective.com',
+    baz: {
+      job_title: 'Occupational Therapist',
+      salary: 130158.88,
+      company: 'Divavu',
+      industry: 'retail',
+      years_experience: 42,
+    },
   },
   {
     id: 2,
@@ -16,6 +23,13 @@ const BAR_DATA: readonly Bar[] = [
     last_name: 'Loache',
     age: 48,
     email: 'kloache1@woothemes.com',
+    baz: {
+      job_title: 'Staff Accountant IV',
+      salary: 396985.45,
+      company: 'Eayo',
+      industry: 'retail',
+      years_experience: 33,
+    },
   },
   {
     id: 3,
@@ -30,6 +44,13 @@ const BAR_DATA: readonly Bar[] = [
     last_name: 'Autry',
     age: 30,
     email: 'rautry3@nbcnews.com',
+    baz: {
+      job_title: 'Senior Financial Analyst',
+      salary: 243475.39,
+      company: 'Youopia',
+      industry: 'healthcare',
+      years_experience: 10,
+    },
   },
   {
     id: 5,
@@ -37,6 +58,13 @@ const BAR_DATA: readonly Bar[] = [
     last_name: 'Canto',
     age: 68,
     email: 'jcanto4@cyberchimps.com',
+    baz: {
+      job_title: 'Nurse Practicioner',
+      salary: 639426.68,
+      company: 'Abatz',
+      industry: 'retail',
+      years_experience: 45,
+    },
   },
   {
     id: 6,
@@ -44,6 +72,13 @@ const BAR_DATA: readonly Bar[] = [
     last_name: 'Rymour',
     age: 37,
     email: 'crymour5@jiathis.com',
+    baz: {
+      job_title: 'Product Engineer',
+      salary: 474845.01,
+      company: 'Tagpad',
+      industry: 'healthcare',
+      years_experience: 13,
+    },
   },
   {
     id: 7,
@@ -52,28 +87,8 @@ const BAR_DATA: readonly Bar[] = [
     age: 83,
     email: 'gchartre6@lulu.com',
   },
-  {
-    id: 8,
-    first_name: 'Daphne',
-    last_name: 'Mieville',
-    age: 34,
-    email: 'dmieville7@tuttocitta.it',
-  },
-  {
-    id: 9,
-    first_name: 'Nichole',
-    last_name: 'Bridgestock',
-    age: 47,
-    email: 'nbridgestock8@oaic.gov.au',
-  },
-  {
-    id: 10,
-    first_name: 'Melony',
-    last_name: 'Gorhardt',
-    age: 23,
-    email: 'mgorhardt9@amazon.co.uk',
-  },
 ];
+
 @Injectable({
   providedIn: 'root',
 })

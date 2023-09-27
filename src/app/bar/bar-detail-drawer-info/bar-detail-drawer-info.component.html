@@ -9,12 +9,9 @@
 </mat-toolbar>
 
 <div class="container">
-  <div *ngFor="let item of store.data$ | async | keyvalue">
+  <div *ngFor="let item of data$ | async | keyvalue">
     {{ item.key }}: {{ item.value }}
   </div>
 
-  <app-skeleton-lines
-    *ngIf="store.loading$ | async"
-    [lines]="5"
-  ></app-skeleton-lines>
+  <app-skeleton-lines *ngIf="store.loading$ | async" />
 </div>
