@@ -16,8 +16,9 @@ export class BarDetailDrawerInfoComponent {
 
   data$ = this.store.data$.pipe(
     map((data) => {
-      if (data?.baz) delete data.baz;
-      return data as BarWithoutBaz;
+      const clone = { ...data };
+      if (clone?.baz) delete clone.baz;
+      return clone as BarWithoutBaz;
     })
   );
 }
