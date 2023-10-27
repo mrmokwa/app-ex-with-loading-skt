@@ -3,9 +3,9 @@ import {
   Breakpoints,
   BreakpointState,
 } from '@angular/cdk/layout';
-import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { distinctUntilKeyChanged, map, Subscription } from 'rxjs';
+import { distinctUntilKeyChanged, Subscription } from 'rxjs';
 
 @Directive({
   selector: '[appSidenavAutoMode]',
@@ -17,9 +17,7 @@ export class SidenavAutoModeDirective {
 
   constructor(
     private matSidenav: MatSidenav,
-    private observer: BreakpointObserver,
-    private elRef: ElementRef,
-    private renderer: Renderer2
+    private observer: BreakpointObserver
   ) {}
 
   ngOnInit(): void {
